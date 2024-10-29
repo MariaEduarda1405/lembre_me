@@ -1,0 +1,142 @@
+/* Estilo do corpo */
+body {
+    font-family: 'Poppins', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e6f7ff; 
+    color: #333; 
+    margin: 0;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0074d9;
+    color: white;
+    padding: 15px 30px;
+}
+
+.header h1 {
+    font-size: 1.8em;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Container principal */
+.container {
+    max-width: 600px; /* Ajuste a largura conforme necessário */
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Layout em coluna */
+.main-content {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em uma coluna */
+    gap: 20px; /* Espaço entre os elementos */
+}
+
+/* Seção do formulário e lista de lembretes */
+.form-section, .reminder-list {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Centraliza os títulos das seções */
+.form-section h2, .reminder-list h2 {
+    color: #0074d9;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Formulário */
+label {
+    display: block;
+    margin: 8px 0 5px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #0074d9;
+    outline: none;
+}
+
+/* Botão */
+button {
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Lista de lembretes */
+.reminder-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reminder-list li {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.reminder-list li:hover {
+    background-color: #eef6ff;
+}
+
+/* Estilo da lista de dicas */
+.tips {
+    margin-top: 20px; /* Margem acima das dicas */
+}
+
+/* Media query para telas menores */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Menos padding no container */
+    }
+
+    .clock-icon {
+        width: 30px; /* Dimensões reduzidas para o ícone */
+        height: auto; /* Mantém a proporção */
+    }
+
+    .tips {
+        margin-top: 20px; /* Espaçamento suficiente acima das dicas */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    .reminder-list {
+        margin-top: 20px; /* Espaçamento entre lembretes e dicas */
+    }
+}

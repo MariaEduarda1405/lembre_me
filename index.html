@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembretes de Saúde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Cabeçalho com navegação -->
+<header class="header">
+    <h1>Lembretes de Saúde</h1>
+</header>
+
+<div class="container">
+    <!-- Formulário e lista de lembretes em colunas -->
+    <div class="main-content">
+        <section class="form-section">
+            <h2>Adicionar Lembrete</h2>
+            <form id="reminderForm">
+                <label for="task">Tarefa:</label>
+                <select id="task" required>
+                    <option value="Agendar fisioterapia">Agendar fisioterapia</option>
+                    <option value="Verificar lista de compras">Verificar lista de compras</option>
+                    <option value="Exercício físico">Exercício físico</option>
+                    <option value="Tomar suplementos">Tomar suplementos</option>
+                    <option value="Organizar consultas">Organizar consultas</option>
+                    <option value="Verificar produtos de higiene">Verificar produtos de higiene</option>
+                    <option value="Planejar refeição">Planejar refeição</option>
+                    <option value="Consulta com dentista">Consulta com dentista</option>
+                    <option value="Exercícios de respiração">Exercícios de respiração</option>
+                    <option value="Banho de sol">Banho de sol</option>
+                    <option value="Preparar chá">Preparar chá</option>
+                    <option value="Verificar vacinas">Verificar vacinas</option>
+                    <option value="Agendar exames">Agendar exames</option>
+                    <option value="Organizar medicamentos">Organizar medicamentos</option>
+                    <option value="Momento de relaxamento">Momento de relaxamento</option>
+                    <option value="Tomar Remédios">Tomar Remédios</option>
+                    <option value="Consulta">Consulta</option>
+                </select>
+
+                <label for="date">Data:</label>
+                <input type="date" id="date" required>
+
+                <label for="time">Hora:</label>
+                <input type="time" id="time" required>
+
+                <button type="button" onclick="addReminder()">Adicionar</button>
+            </form>
+        </section>
+
+        <!-- Lista de lembretes -->
+        <div class="reminder-list" id="reminderList">
+            <h2>Lembretes Ativos</h2>
+            <ul id="reminders"></ul>
+        </div>
+    </div>
+
+    <!-- Mover Dicas de Saúde para a parte de baixo -->
+    <aside class="health-tips">
+        <h2>Dicas de Saúde</h2>
+        <p>🔹 Consulte um médico anualmente.</p>
+        <p>🔹 Beba água regularmente.</p>
+        <p>🔹 Faça pausas durante o dia para se alongar.</p>
+        <p>🔹 Durma pelo menos 7 horas por noite.</p>
+        <p>🔹 Mantenha uma dieta equilibrada com frutas e legumes.</p>
+        <p>🔹 Evite o excesso de açúcar e sal.</p>
+        <p>🔹 Pratique atividades físicas ao menos 3 vezes por semana.</p>
+        <p>🔹 Verifique a pressão arterial regularmente.</p>
+        <p>🔹 Planeje consultas de check-up anual.</p>
+        <p>🔹 Cultive hobbies para aliviar o estresse.</p>
+        <p>🔹 Faça exames de vista periodicamente.</p>
+    </aside>
+</div>
+
+<footer 
+    style="text-align: center; margin-top: 20px; padding: 10px; background-color: #f1f1f1; border-top: 1px solid #ccc;">
+    <p>Para suporte, entre em contato: <a href="mailto:suportelembre.me@gmail.com">suportelembre.me@gmail.com</a></p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register("service-worker.js")
+            .then(registration => {
+                console.log('Service Worker registrado com sucesso:', registration);
+            })
+            .catch(error => {
+                console.error('Falha ao registrar o Service Worker:', error);
+            });
+        });
+    }
+</script>
+
+</body>
+</html>
